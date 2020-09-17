@@ -1,3 +1,7 @@
+const button = document.querySelector("button");
+
+button.addEventListener("click", rps);
+
 
 
 function computerPlay()
@@ -35,9 +39,11 @@ function player()
 
 
 
-function rps(player, computer)
+function rps()
 {
     let outcome
+    player = player();
+    computer = computerPlay();
 
     if (player === "ROCK" && computer == "ROCK")
     {
