@@ -1,7 +1,14 @@
-const button = document.querySelector("button");
+const choiceButtons = document.querySelectorAll('button');
 
-button.addEventListener("click", rps);
+//button.addEventListener("click", rps);
+choiceButtons.forEach((button) => {
 
+     button.addEventListener('click', () => {
+          console.log(button.id);
+          playRPS(button.id);
+          //playerSelection(button.id);
+     });
+});
 
 
 function computerPlay()
@@ -29,14 +36,40 @@ function computerPlay()
 }
 
 //The prompt() method returns the input value if the user clicks "OK". If the user clicks "cancel" the method returns null.
-function player()
+function playerSelection(id)
 {
-   let input = prompt()
+     if (id == 'rock') {
 
-   return input.toUpperCase()
+          return id
+     }
+
+
 }
 
 
+function playRPS(playerSelection)
+{
+     console.log(playerSelection);
+     computerSelection = computerPlay();
+
+     if (playerSelection === "rock" && computerSelection == "ROCK")
+     {
+        alert(`It's a Draw, you both played ${playerSelection}.`);
+     }
+     else if (playerSelection === "rock" && computerSelection == "PAPER")
+     {
+        alert("You lost");
+     }
+     else if (playerSelection === "rock" && computerSelection == "SCISSORS")
+     {
+        alert("You Won");
+     }
+     else
+     {
+        alert("test roll not impl");
+     }
+
+}
 
 
 function rps()
