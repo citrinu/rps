@@ -1,14 +1,18 @@
 const choiceButtons = document.querySelectorAll('button');
+const resultWindow = document.querySelector('results');
+
 
 //button.addEventListener("click", rps);
 choiceButtons.forEach((button) => {
 
      button.addEventListener('click', () => {
-          console.log(button.id);
+          //console.log(button.id);
           playRPS(button.id);
           //playerSelection(button.id);
      });
 });
+
+
 
 
 function computerPlay()
@@ -38,24 +42,24 @@ function computerPlay()
 
 function playRPS(playerSelection)
 {
-     console.log(playerSelection);
+     //console.log(playerSelection);
      computerSelection = computerPlay();
 
-     if (playerSelection === "rock" && computerSelection == "ROCK")
+     if (playerSelection === "ROCK" && computerSelection == "ROCK")
      {
-        alert(`It's a Draw, you both played ${playerSelection}.`);
+        results.textContent = `It's a Draw, you both played ${playerSelection}.`;
      }
-     else if (playerSelection === "rock" && computerSelection == "PAPER")
+     else if (playerSelection === "ROCK" && computerSelection == "PAPER")
      {
-        alert("You lost");
+        results.textContent = "You lost";
      }
-     else if (playerSelection === "rock" && computerSelection == "SCISSORS")
+     else if (playerSelection === "ROCK" && computerSelection == "SCISSORS")
      {
-        alert("You Won");
+        results.textContent = "You won";
      }
      else
      {
-        alert("test roll not impl");
+        results.textContent = "test roll not impl";
      }
 
 }
