@@ -35,17 +35,6 @@ function computerPlay()
 
 }
 
-//The prompt() method returns the input value if the user clicks "OK". If the user clicks "cancel" the method returns null.
-function playerSelection(id)
-{
-     if (id == 'rock') {
-
-          return id
-     }
-
-
-}
-
 
 function playRPS(playerSelection)
 {
@@ -70,35 +59,3 @@ function playRPS(playerSelection)
      }
 
 }
-
-
-function rps()
-{
-    let outcome
-    player = player();
-    computer = computerPlay();
-
-    if (player === "ROCK" && computer == "ROCK")
-    {
-        outcome = `It's a Draw, you both played ${player}.`
-    }else if (player === "ROCK" && computer == "PAPER")
-    {
-        outcome = `You lost`
-    }else if (player === "ROCK" && computer == "SCISSORS")
-    {
-        outcome = `You Won`
-    }else
-    {
-        outcome = "test roll not impl"
-    }
-
-
-    return alert(outcome)
-}
-
-
-
-//let playerSelect = player()
-//let computerSelect = computerPlay()
-
-//rps(playerSelect, computerSelect)
